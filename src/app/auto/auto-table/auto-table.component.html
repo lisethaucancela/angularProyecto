@@ -1,0 +1,43 @@
+<button class="btn btn-success col-md-2 mb-3" [routerLink]="['/createAuto']">Nuevo </button>
+<div class="card">
+  <div class="card-header">Lista de Autos</div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Codigo</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Año</th>
+          <th scope="col">Kilometraje</th>
+          <th scope="col">Calificacion</th>
+          <th scope="col">Creado por</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let auto of autos ">
+          <th scope="row">{{auto.codigo}}</th>
+          <td><a [routerLink]="['/auto/', auto.codigo]">{{ auto.marca }}</a></td>
+          <td>{{auto.modelo}}</td>
+          <td>{{auto.anio}}</td>
+          <td>{{auto.kilometraje}}</td>
+          <td>
+            <div *ngFor="let num of [].constructor(auto.calificacion); let i = index" class="d-inline-flex px-1">
+              <fa-icon [icon]="faStar"></fa-icon> 
+            </div>  
+          </td>
+          <td>{{auto.usuario}}</td>
+          <td class="row">
+            <div class="col-md-5">
+              <button class="btn btn-success" [routerLink]="['/auto/',auto.codigo]">Editar</button>
+            </div>
+            <div class="col-md-5">
+              <button class="btn btn-danger" (click)="deleteAutos(auto.codigo)">Eliminar</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

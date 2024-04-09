@@ -1,0 +1,37 @@
+<button class="btn btn-success col-md-2 mb-3" [routerLink]="['/create']">Nuevo</button>
+<table class="table">
+  <thead>
+    <tr>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Email</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users ">
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.nombre}}</td>
+      <td>{{user.apellido}}</td>
+      <td>{{user.telefono}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.usuario}}</td>
+      <td class="row">
+        <div class="col-md-4">
+          <button class="btn btn-success" [routerLink]="['/edit/',user.id]">Edit</button>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary" [routerLink]="['/user/',user.id]">View</button>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

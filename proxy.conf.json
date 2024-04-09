@@ -1,0 +1,7 @@
+{
+    "/user": {
+        "target": "https://epico.gob.ec",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

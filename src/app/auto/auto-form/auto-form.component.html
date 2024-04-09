@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-header">Nuevo Auto</div>
+      <div class="card-body">
+        <form [formGroup]="form" (submit)="onSubmit()">
+          <div class="form-floating mb-2">
+            <input type=" text" placeholder="codigo" formControlName="codigo" class="form-control" id="codigo">
+            <label for="codigo">Codigo</label>
+            <!-- <span class="text-danger" *ngIf="form.controls['codigo'].errors?.">Valor requerido</span> -->
+          </div>
+          <div class="form-floating mb-2">
+            <input type=" text" placeholder="marca" formControlName="marca" class="form-control" id="marca">
+            <label for="marca">Marca</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type=" text" placeholder="modelo" formControlName="modelo" class="form-control" id="modelo">
+            <label for="modelo">Modelo</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type=" text" placeholder="año" formControlName="anio" class="form-control" id="anio">
+            <label for="anio">Año</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type=" text" placeholder="kilometraje" formControlName="kilometraje" class="form-control" id="kilometraje">
+            <label for="kilometraje">kilometraje</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type=" text" placeholder="precio" formControlName="precio" class="form-control" id="precio">
+            <label for="precio">precio</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type=" text" placeholder="calificacion" formControlName="calificacion" class="form-control" id="calificacion">
+            <label for="calificacion">calificacion</label>
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
